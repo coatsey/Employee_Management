@@ -432,8 +432,6 @@ function deleteEmp(firstName, lastName, employeeID) {
     })
 }
 
-//This function will updated the employees role
-//The id of the employee being updated and an array of the roles from the database are passed in as parameters
 function updateEmpRole(employeeID, RolesArray) {
     console.log("Entered update employee role.")
 
@@ -459,8 +457,6 @@ function updateEmpRole(employeeID, RolesArray) {
     })
 }
 
-//This function will update the employees manager
-//the ID of the employee being updated and an Array of the manager data from database are based into it as parameters
 function updateEmpManager(employeeID, managerObjectArray) {
     console.log("Entered update employee manager.")
 
@@ -577,10 +573,7 @@ function deleteRole(compRolesArr) {
             const roleDeleteID = res[0].id;
             const roleDeleteTitle = userChoice.role_to_delete;
 
-            //This if statment checks to see if more that one role exist with that title.
-            //If it does the user is prompted with a role title and department name to aid the selection of the role they want to delete
             if (res.length > 1) {
-                //Tell user role exists in multiple departments and make sure they want to delete it
                 console.log("Role found in multiple departments!");
 
                 const departmentsWithRolequery = `SELECT department.name, role.department_id
